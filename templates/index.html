@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NL2SQL Ecommerce Query Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ecommerce Data Query</h1>
+        
+        <div class="search-container">
+            <input type="text" id="queryInput" placeholder="Ask your question in natural language...">
+            <button onclick="submitQuery()">Search</button>
+        </div>
+
+        <div class="schema-container">
+            <h2>Available Database Schema</h2>
+            <div class="schema-content">
+                <h3>Products</h3>
+                <p>Fields: product_id, name, description, price, category, stock_quantity</p>
+                
+                <h3>Orders</h3>
+                <p>Fields: order_id, customer_id, order_date, total_amount, status</p>
+                
+                <h3>Customers</h3>
+                <p>Fields: customer_id, name, email, join_date, total_orders</p>
+
+                <h3>Example Queries:</h3>
+                <ul>
+                    <li>"Show all products with price less than $50"</li>
+                    <li>"What are the top 5 selling products?"</li>
+                    <li>"List customers who made orders in the last month"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="results" class="results-container">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
